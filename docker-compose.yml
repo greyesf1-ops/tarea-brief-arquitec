@@ -1,1 +1,38 @@
+version: '3.8'
 
+services:
+  
+  broker:
+    image: redis:alpine
+    container_name: redis_broker
+    ports:
+      - "6379:6379"
+
+  
+  erp-service:
+    image: python:3.9-slim
+    container_name: erp_producer
+    depends_on:
+      - broker
+    command: >
+      sh -c "pip install redis && 
+             python -c 'import redis, time; r = redis.Redis(host=\"broker\"); 
+             print(\"Iniciando ERP...\");
+             while True: 
+                 r.publish(\"pedidos\", \"ORDEN-99: Camiseta de Futbol\"); 
+                 print(\"Mensaje enviado: Nueva Orden de Compra\");
+                 time.sleep(10)'"
+
+  
+  inventory-service:
+    image: python:3.9-slim
+    container_name: inventory_consumer
+    depends_on:
+      - broker
+    command: >
+      sh -c "pip install redis && 
+             python -c 'import redis; r = redis.Redis(host=\"broker\"); p = r.pubsub(); 
+             p.subscribe(\"pedidos\"); print(\"Inventario escuchando pedidos...\");
+             for m in p.listen(): 
+                 if m[\"type\"] == \"message\":
+                     print(f\"[NOTIFICACION RECIBIDA]: Actualizando stock para: {m[\"data\"].decode()}\")'"
