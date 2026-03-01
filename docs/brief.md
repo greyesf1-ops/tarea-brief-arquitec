@@ -14,7 +14,7 @@ graph TD
     Broker -->|Notifica| Ship[Servicio Despacho]
     SOR -->|Carga de Datos| BI[Dashboard BI]
 
-```markdown
+```
 ## A2) Gobierno de TI (COBIT)
 
 ### Roles y Responsabilidades
