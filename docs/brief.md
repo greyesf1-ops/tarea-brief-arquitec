@@ -13,11 +13,9 @@ graph TD
     Broker -->|Notifica| Inv[Servicio Inventario]
     Broker -->|Notifica| Ship[Servicio Despacho]
     SOR -->|Carga de Datos| BI[Dashboard BI]
-
-
-
-    A2) Gobierno de TI (COBIT)
-Roles y Responsabilidades:
+```markdown
+###A2) Gobierno de TI (COBIT)
+###Roles y Responsabilidades:
 Dirección: Define estrategia y presupuesto.
 Gerente de TI: Responsable de disponibilidad técnica.
 Oficial de Seguridad (CISO): Cumplimiento y protección.
