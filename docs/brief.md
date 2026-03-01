@@ -13,26 +13,33 @@ graph TD
     Broker -->|Notifica| Inv[Servicio Inventario]
     Broker -->|Notifica| Ship[Servicio Despacho]
     SOR -->|Carga de Datos| BI[Dashboard BI]
+
 ```markdown
-###A2) Gobierno de TI (COBIT)
-###Roles y Responsabilidades:
-Dirección: Define estrategia y presupuesto.
-Gerente de TI: Responsable de disponibilidad técnica.
-Oficial de Seguridad (CISO): Cumplimiento y protección.
-Dueño de Proceso (Retail): Valida integridad de datos de ventas.
-Decisiones Gobernadas:
-Fuente de verdad del cliente (SoR).
-Selección de proveedores Cloud/SaaS.
-Ventanas de mantenimiento crítico.
-Gestión de cambios en aplicaciones core.
-Política de accesos y privilegios.
-Plan de inversión tecnológica anual.
-Políticas Mínimas:
-Accesos: MFA obligatorio y revisión de roles trimestral.
-Cambios: Todo despliegue requiere revisión de pares (Code Review).
-Backups: Respaldo diario con prueba de restauración mensual.
-Incidentes: Reporte formal y post-mortem obligatorio.
-Proveedores: Evaluación de seguridad antes de contratar un SaaS.
+## A2) Gobierno de TI (COBIT)
+
+### Roles y Responsabilidades
+
+- Dirección: Define estrategia y presupuesto.
+- Gerente de TI: Responsable de disponibilidad técnica.
+- Oficial de Seguridad (CISO): Cumplimiento y protección.
+- Dueño de Proceso (Retail): Valida integridad de datos de ventas.
+
+### Decisiones Gobernadas
+
+- Fuente de verdad del cliente (SoR).
+- Selección de proveedores Cloud/SaaS.
+- Ventanas de mantenimiento crítico.
+- Gestión de cambios en aplicaciones core.
+- Política de accesos y privilegios.
+- Plan de inversión tecnológica anual.
+
+### Políticas Mínimas
+
+- Accesos: MFA obligatorio y revisión de roles trimestral.
+- Cambios: Todo despliegue requiere revisión de pares (Code Review).
+- Backups: Respaldo diario con prueba de restauración mensual.
+- Incidentes: Reporte formal y post-mortem obligatorio.
+- Proveedores: Evaluación de seguridad antes de contratar un SaaS.
 
 A3) Riesgo y Seguridad (NIST CSF 2.0)
 
