@@ -3,6 +3,7 @@
 ## A1) Arquitectura aplicada al caso
 Nuestra organización es un E-commerce de Retail. El **System of Record (SoR)** es el ERP central que gestiona órdenes y clientes. Los sistemas satélites son el servicio de inventario y el servicio de despacho. Para conectar estos sistemas, utilizamos un broker de mensajes basado en **Apache Kafka** para lograr un flujo *Event-Driven* (orientado a eventos) para mayor escalabilidad y tolerancia a fallos.
 
+
 ### Diagrama de Arquitectura
 ```mermaid
 graph TD
