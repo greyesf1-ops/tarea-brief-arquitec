@@ -26,3 +26,10 @@ Siga estos pasos para validar el flujo de datos entre los microservicios una vez
 2. **Monitorear la Transmisión en Tiempo Real** Para comprobar que el **ERP** está enviando órdenes y el **Inventario** las recibe correctamente, ejecute el siguiente comando para ver los logs:
    ```bash
    docker logs -f inventory_consumer
+
+   ```
+   **Enlace a el Repo**
+    https://github.com/greyesf1-ops/tarea-brief-arquitec.git
+
+   **Enlace video**
+   https://drive.google.com/drive/folders/1qwRUGK7rNyHop-0CfeotZBM-yySG3OWk?usp=sharing
