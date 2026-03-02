@@ -12,3 +12,16 @@ Desde la terminal, en la raíz del proyecto, ejecute el siguiente comando para c
 
 ```bash
 docker compose up -d
+
+### 🚀 Guía de Ejecución y Monitoreo
+
+Siga estos pasos para validar el flujo de datos entre los microservicios una vez que el entorno esté configurado:
+
+1. **Verificar el Estado de los Servicios** Asegúrese de que los contenedores estén en ejecución (estado `Running`) en Docker Desktop o mediante la terminal:
+   * `kafka_broker` (Puerto 9092)
+   * `erp_producer`
+   * `inventory_consumer`
+
+2. **Monitorear la Transmisión en Tiempo Real** Para comprobar que el **ERP** está enviando órdenes y el **Inventario** las recibe correctamente, ejecute el siguiente comando para ver los logs:
+   ```bash
+   docker logs -f inventory_consumer
