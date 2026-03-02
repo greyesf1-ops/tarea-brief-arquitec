@@ -20,13 +20,7 @@ services:
     depends_on:
       - kafka
     command: >
-      sh -c "pip install kafka-python && 
-             python -c 'from kafka import KafkaProducer; import time;
-             p = KafkaProducer(bootstrap_servers=\"kafka:9092\");
-             print(\"ERP: Conectado y enviando órdenes...\");
-             while True:
-                 p.send(\"pedidos\", b\"ORDEN-RETAIL-99\");
-                 time.sleep(5)'"
+      sh -c "pip install kafka-python && python -c 'from kafka import KafkaProducer; import time; p = KafkaProducer(bootstrap_servers=\"kafka:9092\"); print(\"ERP: Enviando...\"); [p.send(\"pedidos\", b\"ORDEN-RETAIL-99\") or time.sleep(5) for _ in iter(int, 1)]'"
 
   inventory-service:
     image: python:3.9-slim
@@ -34,9 +28,4 @@ services:
     depends_on:
       - kafka
     command: >
-      sh -c "pip install kafka-python && 
-             python -c 'from kafka import KafkaConsumer;
-             c = KafkaConsumer(\"pedidos\", bootstrap_servers=\"kafka:9092\");
-             print(\"Inventario: Esperando mensajes...\");
-             for msg in c:
-                 print(f\"[DEMO] Recibido del ERP: {msg.value.decode()}\")'"
+      sh -c "pip install kafka-python && python -c 'from kafka import KafkaConsumer; c = KafkaConsumer(\"pedidos\", bootstrap_servers=\"kafka:9092\"); print(\"Inventario: Esperando...\"); [print(f\"[DEMO] Recibido: {msg.value.decode()}\") for msg in c]'"
