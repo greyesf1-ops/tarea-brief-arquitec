@@ -13,6 +13,7 @@ Desde la terminal, en la raíz del proyecto, ejecute el siguiente comando para c
 ```bash
 docker compose up -d
 
+```
 ### 🚀 Guía de Ejecución y Monitoreo
 
 Siga estos pasos para validar el flujo de datos entre los microservicios una vez que el entorno esté configurado:
