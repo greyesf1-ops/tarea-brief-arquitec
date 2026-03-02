@@ -31,5 +31,5 @@ Siga estos pasos para validar el flujo de datos entre los microservicios una vez
    **Enlace a el Repo**
     https://github.com/greyesf1-ops/tarea-brief-arquitec.git
 
-   **Enlace video**
+   **Enlace video** 
    https://drive.google.com/drive/folders/1qwRUGK7rNyHop-0CfeotZBM-yySG3OWk?usp=sharing
